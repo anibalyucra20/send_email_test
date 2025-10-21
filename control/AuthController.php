@@ -55,11 +55,6 @@ function enviarCodigo($correo, $nombre, $codigo)
         $mail->Timeout    = 20;
         $mail->SMTPKeepAlive = false;
 
-        // Si fallara por CN/SAN del cert (solo para probar; quita en prod):
-        // $mail->SMTPOptions = ['ssl' => [
-        //     'verify_peer' => false, 'verify_peer_name' => false, 'allow_self_signed' => true
-        // ]];
-
         $mail->send();
         return true;
     } catch (Exception $e) {
